@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">YOUR STUDY SPACE</p>
+      <h1>Student Planner</h1>
+      <p>Organize your tasks, stay focused, and make every study day count.</p>
+    </div>
+    <div class="date-card">
+      <span id="today"></span>
+      <strong id="clock"></strong>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="stats">
+      <article class="stat"><span>Total tasks</span><strong id="totalCount">0</strong></article>
+      <article class="stat"><span>Completed</span><strong id="doneCount">0</strong></article>
+      <article class="stat"><span>Pending</span><strong id="pendingCount">0</strong></article>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div><p class="eyebrow">PLAN YOUR DAY</p><h2>Add a task</h2></div>
+      </div>
+      <form id="taskForm">
+        <label>Task name<input id="taskName" type="text" placeholder="e.g. Revise Python dictionaries" required maxlength="100"></label>
+        <label>Subject<input id="subject" type="text" placeholder="e.g. Python" maxlength="50"></label>
+        <label>Due date<input id="dueDate" type="date" required></label>
+        <label>Priority<select id="priority"><option>Medium</option><option>High</option><option>Low</option></select></label>
+        <button type="submit">＋ Add task</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="task-top">
+        <div><p class="eyebrow">STAY ON TRACK</p><h2>Your tasks</h2></div>
+        <select id="filter" aria-label="Filter tasks"><option value="all">All tasks</option><option value="pending">Pending</option><option value="completed">Completed</option></select>
+      </div>
+      <div id="taskList" class="task-list"></div>
+      <p id="emptyState" class="empty">No tasks yet. Add your first task above!</p>
+    </section>
+    <p class="footnote">Your tasks are saved in this browser using local storage.</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
